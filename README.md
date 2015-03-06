@@ -13,5 +13,8 @@ For example, if you wanted to use Font Awesome on your site but your current the
 
 ## Changelog ##
 
+### 1.0.1 - Released 2015/03/06 ###
+*	Small change to make `require_once` for plugin definitions more specific to avoid possible `require_once` conflicts
+
 ### 1.0.0 - Released 2015/02/08 ###
 *	Initial release.
