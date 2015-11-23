@@ -13,6 +13,9 @@ For example, if you wanted to use Font Awesome on your site but your current the
 
 ## Changelog ##
 
+### 1.0.2 - Released 2015/11/23 ###
+*	Updated settings-page headings to match WordPress 4.4's new heading structure on admin pages
+
 ### 1.0.1 - Released 2015/03/06 ###
 *	Small change to make `require_once` for plugin definitions more specific to avoid possible `require_once` conflicts
 
