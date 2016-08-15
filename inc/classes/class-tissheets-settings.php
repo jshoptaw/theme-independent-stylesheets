@@ -62,14 +62,14 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 			// Plugin Settings
 			add_settings_section(
 				'tissheets_plugin_settings_section',
-				__( 'Plugin Settings', TISSHEETS_TEXT_DOMAIN ),
+				__( 'Plugin Settings', 'theme-independent-stylesheets' ),
 				array( $this, 'tissheets_plugin_settings_section_callback' ),
 				$this->menu_slug
 			);
 
 			add_settings_field(
 				'tissheets_plugin_full_uninstall',
-				__( 'Full Wipe on Uninstall', TISSHEETS_TEXT_DOMAIN ),
+				__( 'Full Wipe on Uninstall', 'theme-independent-stylesheets' ),
 				array( $this, 'tissheets_plugin_full_uninstall_callback' ),
 				$this->menu_slug,
 				'tissheets_plugin_settings_section'
@@ -78,7 +78,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 
 		// Register "Plugin Settings" section
 		public function tissheets_plugin_settings_section_callback() {
-			echo '<p>' . sprintf( __( 'Settings for the <i>%s</i> plugin.', TISSHEETS_TEXT_DOMAIN ), TISSHEETS_PLUGIN_NAME ) . '</p>';
+			echo '<p>' . sprintf( __( 'Settings for the <i>%s</i> plugin.', 'theme-independent-stylesheets' ), TISSHEETS_PLUGIN_NAME ) . '</p>';
 		}
 
 		// Register "Full Uninstall" setting
@@ -89,7 +89,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 		// Add menu item under "Settings" menu
 		public function add_options_page() {
 			if ( current_user_can( 'edit_theme_options' ) ) {
-				add_options_page( __( 'Theme-Independent Stylesheets', TISSHEETS_TEXT_DOMAIN ), __( 'Theme-Independent Stylesheets', TISSHEETS_TEXT_DOMAIN ), 'edit_theme_options', $this->menu_slug, array( $this, 'create_options_page' ) );
+				add_options_page( __( 'Theme-Independent Stylesheets', 'theme-independent-stylesheets' ), __( 'Theme-Independent Stylesheets', 'theme-independent-stylesheets' ), 'edit_theme_options', $this->menu_slug, array( $this, 'create_options_page' ) );
 			}
 		}
 
@@ -106,13 +106,13 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 		public function create_options_page() {
 			?>
 			<div class="wrap">
-				<h1><?php _e( 'Theme-Independent Stylesheets', TISSHEETS_TEXT_DOMAIN ); ?></h1>
+				<h1><?php _e( 'Theme-Independent Stylesheets', 'theme-independent-stylesheets' ); ?></h1>
 
 				<form method="post" action="options.php">
 
 					<hr />
 
-					<h2><?php _e( 'Stylesheet Settings <a href="#help" title="View Help Section"><span class="dashicons dashicons-editor-help"></span></a>', TISSHEETS_TEXT_DOMAIN ); ?></h2>
+					<h2><?php _e( 'Stylesheet Settings <a href="#help" title="View Help Section"><span class="dashicons dashicons-editor-help"></span></a>', 'theme-independent-stylesheets' ); ?></h2>
 					<?php
 					$stylesheets = get_posts( array(
 						'posts_per_page' => -'1',
@@ -223,11 +223,11 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 									echo '<td class="tissheets-location">';
 									
 									echo '<div class="tissheets-location-external-contain">';
-									echo '<label>' . $this->setting_field( 'radio', $stylesheet->ID, 'location', 'external' ) . ' ' . __( 'External', TISSHEETS_TEXT_DOMAIN ) . ' <small>(&lt;link /&gt;)</small></label>';
+									echo '<label>' . $this->setting_field( 'radio', $stylesheet->ID, 'location', 'external' ) . ' ' . __( 'External', 'theme-independent-stylesheets' ) . ' <small>(&lt;link /&gt;)</small></label>';
 									echo '</div>';
 									
 									echo '<div class="tissheets-location-inline-contain">';
-									echo '<label>' . $this->setting_field( 'radio', $stylesheet->ID, 'location', 'inline' ) . ' ' . __( 'Inline', TISSHEETS_TEXT_DOMAIN ) . ' <small>(&lt;style&gt;)</small></label>';
+									echo '<label>' . $this->setting_field( 'radio', $stylesheet->ID, 'location', 'inline' ) . ' ' . __( 'Inline', 'theme-independent-stylesheets' ) . ' <small>(&lt;style&gt;)</small></label>';
 									echo '</div>';
 
 									echo '</td>';
@@ -241,7 +241,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 									echo '</td>';
 								}
 							} else {
-								echo '<td class="tissheets-none-found" colspan="9">' . __( 'No stylesheets found in WordPress Media Library.', TISSHEETS_TEXT_DOMAIN ) . '</td>';
+								echo '<td class="tissheets-none-found" colspan="9">' . __( 'No stylesheets found in WordPress Media Library.', 'theme-independent-stylesheets' ) . '</td>';
 							}
 
 							echo '</tr>';
@@ -284,23 +284,23 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 			echo "<t$section>";
 				?>
 				<tr>
-					<th class="column-title" scope="col"><?php _e( 'Active', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Active', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'Load<br />Order', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Load<br />Order', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'ID', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'ID', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'Handle <small>(required)</small>', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Handle <small>(required)</small>', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'Name', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Name', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'Version', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Version', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'Media Type(s)', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'Media Type(s)', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( 'External or inline?', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( 'External or inline?', 'theme-independent-stylesheets' ); ?></th>
 
-					<th class="column-title" scope="col"><?php _e( '<abbr title="Internet Explorer">IE</abbr> Conditional Comment', TISSHEETS_TEXT_DOMAIN ); ?></th>
+					<th class="column-title" scope="col"><?php _e( '<abbr title="Internet Explorer">IE</abbr> Conditional Comment', 'theme-independent-stylesheets' ); ?></th>
 				</tr>
 				<?php
 			echo '</t$section>';
@@ -476,7 +476,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 						$output['stylesheets'][ $id ]['handle'] = sanitize_title( get_the_title( $stylesheet_id ) );
 
 						if ( ! isset( $this->errors['handle']['msg'] ) ) {
-							$this->errors['handle']['msg'] = __( 'A handle is required for all stylesheets.', TISSHEETS_TEXT_DOMAIN );
+							$this->errors['handle']['msg'] = __( 'A handle is required for all stylesheets.', 'theme-independent-stylesheets' );
 						}
 					}
 
@@ -574,7 +574,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 						$output['stylesheets'][ $id ]['ie_conditional_comment']['is_IE'] = 0;
 						$output['stylesheets'][ $id ]['ie_conditional_comment']['version'] = 0;
 
-						$this->errors['ie_conditional_comment'][ $id ]['msg'] = __( 'Invalid <abbr title="Internet Explorer">IE</abbr> Conditional Comment provided for stylesheet ID ' . $stylesheet_id . '.', TISSHEETS_TEXT_DOMAIN );
+						$this->errors['ie_conditional_comment'][ $id ]['msg'] = __( 'Invalid <abbr title="Internet Explorer">IE</abbr> Conditional Comment provided for stylesheet ID ' . $stylesheet_id . '.', 'theme-independent-stylesheets' );
 					}
 				}
 
@@ -613,7 +613,7 @@ if ( ! class_exists( 'TISSheets_Settings' ) ) {
 					add_settings_error(
 						'tissheets_settings',
 						$error_code,
-						__( 'Settings saved.', TISSHEETS_TEXT_DOMAIN ),
+						__( 'Settings saved.', 'theme-independent-stylesheets' ),
 						'updated'
 					);
 				}

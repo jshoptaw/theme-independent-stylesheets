@@ -17,9 +17,9 @@ if ( ! class_exists( 'TISSheets_Plugin_Functions' ) ) {
 			$this_plugin = TISSHEETS_PLUGIN_BASENAME;
 
 			if ( $file === $this_plugin ) {
-				$settings_link = '<a href="options-general.php?page=tissheets_options">' . __( 'Settings', TISSHEETS_TEXT_DOMAIN ) . '</a>';
+				$settings_link = '<a href="options-general.php?page=tissheets_options">' . __( 'Settings', 'theme-independent-stylesheets' ) . '</a>';
 
-				$help_link     = '<a href="options-general.php?page=tissheets_options#help">' . __( 'Help', TISSHEETS_TEXT_DOMAIN ) . '</a>';
+				$help_link     = '<a href="options-general.php?page=tissheets_options#help">' . __( 'Help', 'theme-independent-stylesheets' ) . '</a>';
 
 				$links[] = $settings_link;
 				$links[] = $help_link;
@@ -41,7 +41,7 @@ if ( ! class_exists( 'TISSheets_Plugin_Functions' ) ) {
 		// Load any translations
 		public static function load_translation_files() {
 			$translation_path = plugin_basename( TISSHEETS_PATH . '/translations' );
-			load_plugin_textdomain( TISSHEETS_TEXT_DOMAIN, false, $translation_path );
+			load_plugin_textdomain( 'theme-independent-stylesheets', false, $translation_path );
 		}
 
 		public static function sort_stylesheets( $a, $b ) {
