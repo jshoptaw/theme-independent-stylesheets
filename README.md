@@ -13,6 +13,9 @@ For example, if you wanted to use Font Awesome on your site but your current the
 
 ## Changelog ##
 
+### 1.0.3 - Released 2016/08/15 ###
+*	Changed plugin text domain to fall in line with WordPress's internationalization standards (as per https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#text-domains) and fixed a small typo in the plugin name definition of the TISSHEETS_PLUGIN_NAME constant
+
 ### 1.0.2 - Released 2015/11/23 ###
 *	Updated settings-page headings to match WordPress 4.4's new heading structure on admin pages
 
