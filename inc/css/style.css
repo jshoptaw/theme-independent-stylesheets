@@ -83,7 +83,7 @@ h3 a {
 /**
  * Help section
  */
-#help-table dt {
+.help-tab-content dt {
 	font-weight: bold;
 	margin: 5px 0 0;
 }
@@ -100,20 +100,20 @@ pre {
 	position: relative;
 }
 
-	blockquote:before,
-	blockquote:after {
+	blockquote::before,
+	blockquote::after {
 		color: #ccc;
 		font-size: 40px;
 		position: absolute;
 	}
 
-	blockquote:before {
+	blockquote::before {
 		content: "\201C";
-		top: 0;
+		top: 10px;
 		left: 10px;
 	}
 
-	blockquote:after {
+	blockquote::after {
 		content: "\201D";
 		right: 10px;
 		bottom: 0;

@@ -19,10 +19,7 @@ if ( ! class_exists( 'TISSheets_Plugin_Functions' ) ) {
 			if ( $file === $this_plugin ) {
 				$settings_link = '<a href="options-general.php?page=tissheets_options">' . __( 'Settings', 'theme-independent-stylesheets' ) . '</a>';
 
-				$help_link     = '<a href="options-general.php?page=tissheets_options#help">' . __( 'Help', 'theme-independent-stylesheets' ) . '</a>';
-
 				$links[] = $settings_link;
-				$links[] = $help_link;
 			}
 
 			return $links;
